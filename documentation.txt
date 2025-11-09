@@ -1,0 +1,29 @@
+# Financial Analysis Chatbot Prototype
+
+## Overview
+A simple **rule-based chatbot** that answers **3 predefined financial queries** using real 10-K data from **Microsoft, Tesla, and Apple** (FY2023–2025).
+
+## Predefined Queries
+| Query | Response Example |
+|------|------------------|
+| `What is Microsoft's total revenue?` | Microsoft's total revenue in FY2025 is $268,877 million. |
+| `How has Tesla's net income changed?` | Tesla's net income decreased from $14,997M to $7,093M (-52.7%). |
+| `What is Apple's cash flow from operating activities?` | Apple generated $118,254 million in cash flow... |
+
+## How It Works
+1. Loads `data_summary.xlsx` (Sheet1)
+2. Uses **if-else logic** to match user input (case-insensitive)
+3. Pulls exact values from the dataset
+4. Computes **YoY change** for net income
+5. Runs in terminal via `input()`
+
+## Limitations
+- Only responds to **exact predefined queries**
+- No natural language understanding (NLU)
+- Case-insensitive but keyword-based
+- No web interface (command-line only)
+
+## How to Run
+```bash
+pip install pandas openpyxl
+python chatbot.py
